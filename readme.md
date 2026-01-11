@@ -69,6 +69,8 @@ const TMDB_API_KEY = 'YOUR_API_KEY_HERE';
 You can get a free API key from:
 [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 
+Or visit the hosted site: https://postorbit.onrender.com/
+
 ---
 
 ### 4. Run the app
