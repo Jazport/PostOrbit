@@ -15,18 +15,16 @@ const {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-/* =========================
-   MIDDLEWARE
-========================= */
+// MIDDLEWARE
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* =========================
-   SEARCH ROUTE (FIXED)
-========================= */
+// SEARCH ROUTE (FIXED)
+
 app.get('/api/search', async (req, res) => {
   const { query, type } = req.query;
-  
+
   if (!query || !type) {
     return res.status(400).json([]);
   }
@@ -47,9 +45,7 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
-/* =========================
-   DETAILS ROUTES
-========================= */
+// DETAILS ROUTES
 app.get('/movie/:id', async (req, res) => {
   try {
     const axios = require('axios');
@@ -76,9 +72,7 @@ app.get('/tv/:id', async (req, res) => {
   }
 });
 
-/* =========================
-   SIMILAR ROUTES
-========================= */
+// SIMILAR ROUTES
 app.get('/api/similar/:id', async (req, res) => {
   try {
     const results = await getSimilarMovies(req.params.id);
@@ -106,9 +100,8 @@ app.get('/api/similar-movie-from-tv/:id', async (req, res) => {
   }
 });
 
-/* =========================
-   START SERVER
-========================= */
+// START SERVER
+
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

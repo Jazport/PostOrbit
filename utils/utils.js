@@ -16,9 +16,7 @@ const tmdb = axios.create({
   }
 });
 
-/* ===========================
-   SEARCH
-=========================== */
+// SEARCH 
 
 async function searchMovies(query) {
   if (!query) return [];
@@ -46,9 +44,7 @@ async function searchTVShows(query) {
   }
 }
 
-/* ===========================
-   SIMILAR
-=========================== */
+// SIMILAR
 
 async function getSimilarMovies(id) {
   try {

@@ -1,5 +1,3 @@
-console.log('✅ script.js loaded');
-
 const searchBtn = document.getElementById('search-btn');
 const searchInput = document.getElementById('search-input');
 const moviesContainer = document.getElementById('movies-container');
@@ -11,12 +9,14 @@ const IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 const MIN_LOADER_TIME = 800;
 let loaderStartTime = 0;
 
-/* ENTER KEY */
+// ENTER KEY
+
 searchInput.addEventListener('keydown', e => {
   if (e.key === 'Enter') searchBtn.click();
 });
 
-/* SEARCH */
+// SEARCH 
+
 searchBtn.addEventListener('click', async () => {
   const query = searchInput.value.trim();
   if (!query) return;
@@ -42,7 +42,8 @@ searchBtn.addEventListener('click', async () => {
   }
 });
 
-/* DISPLAY RESULTS */
+// DISPLAY RESULTS
+
 function displayResults(items) {
   moviesContainer.innerHTML = '';
   if (!items.length) {
@@ -69,7 +70,8 @@ function displayResults(items) {
   });
 }
 
-/* CLICK CARD / SIMILAR */
+// CLICK CARD / SIMILAR 
+
 document.addEventListener('click', async e => {
   const target = e.target.closest('.movie-card') || e.target.closest('.similar-grid img');
   if (!target) return;
@@ -112,7 +114,8 @@ document.addEventListener('click', async e => {
   }
 });
 
-/* RENDER MODAL */
+// RENDER MODAL
+
 function renderModal(details, movies, tv) {
   detailsContainer.innerHTML = `
     <div class="details-layout">
@@ -131,7 +134,8 @@ function renderModal(details, movies, tv) {
   `;
 }
 
-/* SIMILAR CARDS */
+// SIMILAR CARDS
+
 function buildSimilar(title, items, type) {
   return `
     <h3>${title}</h3>
@@ -147,7 +151,8 @@ function buildSimilar(title, items, type) {
   `;
 }
 
-/* SCROLL BUTTONS */
+// SCROLL BUTTONS
+
 document.addEventListener('click', e => {
   const btn = e.target.closest('.scroll-btn');
   if (!btn) return;
@@ -159,12 +164,14 @@ document.addEventListener('click', e => {
   grid.scrollBy({ left: 300 * dir, behavior: 'smooth' });
 });
 
-/* CLOSE MODAL */
+// CLOSE MODAL
+
 document.addEventListener('click', e => {
   if (e.target.classList.contains('close')) modal.classList.add('hidden');
 });
 
-/* LOADER */
+// LOADER
+
 function showLoader() {
   loaderStartTime = Date.now();
   loadingScreen.classList.remove('hidden');
