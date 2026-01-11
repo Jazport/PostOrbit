@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POSTORBIT - Futuristic Movie Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="/" class="logo">PostOrbit 🛸</a></h1>
+    <p>Search for a movie or TV show and discover similar ones!</p>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <input type="text" id="search-input" placeholder="Type a movie or TV show...">
+      <button id="search-btn">Search</button>
+    </section>
+
+    <section id="movies-container" class="movies-grid"></section>
+
+    <!-- Modal -->
+    <div id="movie-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="movie-details"></div>
+      </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loading-screen" class="loading hidden">
+      <div class="ufo">🛸</div>
+      <p>Scanning the galaxy for content...</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 PostOrbit. Designed by Jazlyn Portillo. <br>Powered by TMDB API
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
